@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>مؤسسة الزيق - طلبات الجملة</title>
+    <style>
+        body { font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; background-color: #f4f6f8; margin: 0; padding: 15px; color: #333; }
+        .header { background-color: #1e3a8a; color: white; padding: 20px; text-align: center; border-radius: 12px; margin-bottom: 15px; box-shadow: 0 4px 6px rgba(0,0,0,0.1); }
+        .header h1 { margin: 0; font-size: 26px; }
+        .badge { background-color: #10b981; color: white; padding: 6px 12px; border-radius: 20px; font-size: 13px; display: inline-block; margin-top: 10px; font-weight: bold; }
+        .category-bar { display: flex; gap: 10px; overflow-x: auto; padding: 10px 0; margin-bottom: 15px; }
+        .category-item { background: white; padding: 8px 18px; border-radius: 20px; font-size: 14px; box-shadow: 0 2px 4px rgba(0,0,0,0.05); white-space: nowrap; font-weight: bold; }
+        .product-card { background: white; padding: 15px; border-radius: 12px; margin-bottom: 15px; box-shadow: 0 2px 5px rgba(0,0,0,0.05); display: flex; justify-content: space-between; align-items: center; border-right: 5px solid #1e3a8a; }
+        .product-info h3 { margin: 0 0 5px 0; font-size: 17px; color: #111; }
+        .product-info p { margin: 0; color: #666; font-size: 13px; }
+        .price { color: #1e3a8a; font-weight: bold; margin-top: 5px; display: block; font-size: 15px; }
+        .btn-add { background: #10b981; color: white; border: none; padding: 10px 18px; border-radius: 8px; cursor: pointer; font-weight: bold; font-size: 14px; }
+        .footer-cart { position: fixed; bottom: 0; left: 0; right: 0; background: white; padding: 15px; box-shadow: 0 -4px 15px rgba(0,0,0,0.1); text-align: center; border-top-left-radius: 20px; border-top-right-radius: 20px; }
+        .btn-checkout { background: #25D366; color: white; border: none; padding: 14px 20px; border-radius: 10px; width: 95%; font-size: 16px; font-weight: bold; margin-top: 8px; cursor: pointer; display: inline-flex; align-items: center; justify-content: center; gap: 8px; box-shadow: 0 4px 6px rgba(0,0,0,0.1); }
+    </style>
+</head>
+<body>
+
+    <div class="header">
+        <h1>🏛️ مؤسسة الزيق</h1>
+        <p style="margin: 5px 0 0 0; font-size: 15px; opacity: 0.9;">لتجارة المواد التموينية (جملة الجملة)</p>
+        <span class="badge">أقل طلبية لتحميل السيارة: 100 دينار</span>
+    </div>
+
+    <div class="category-bar">
+        <div class="category-item" style="background: #1e3a8a; color: white;">🌾 الكل</div>
+        <div class="category-item">🛢️ زيوت وسمنة</div>
+        <div class="category-item">🥫 معلبات وبكجّات</div>
+        <div class="category-item">🧊 سكر وطحين</div>
+    </div>
+
+    <!-- منتج 1 -->
+    <div class="product-card">
+        <div class="product-info">
+            <h3>🌾 أرز بسمتي هندي (نخب أول)</h3>
+            <p>الوزن: شوال 40 كيلو</p>
+            <span class="price">35.00 دينار</span>
+        </div>
+        <button class="btn-add" onclick="sendToWhatsapp('أرز بسمتي هندي (شوال 40 كيلو)')">إرمي بالسلة +</button>
+    </div>
+
+    <!-- منتج 2 -->
+    <div class="product-card">
+        <div class="product-info">
+            <h3>🛢️ زيت ذرة نقي (مكفول)</h3>
+            <p>الشدّ: كرتونة (4 جوالين × 5 لتر)</p>
+            <span class="price">22.00 دينار</span>
+        </div>
+        <button class="btn-add" onclick="sendToWhatsapp('زيت ذرة نقي (كرتونة 4 جوالين)')">إرمي بالسلة +</button>
+    </div>
+
+    <!-- منتج 3 -->
+    <div class="product-card">
+        <div class="product-info">
+            <h3>🥫 رب بندورة فاخر</h3>
+            <p>الشدّ: كرتونة (48 علبة)</p>
+            <span class="price">12.50 دينار</span>
+        </div>
+        <button class="btn-add" onclick="sendToWhatsapp('رب بندورة فاخر (كرتونة 48 علبة)')">إرمي بالسلة +</button>
+    </div>
+
+    <div style="height: 130px;"></div> <!-- مساحة أمان للفوتر -->
+
+    <div class="footer-cart">
+        <div style="display: flex; justify-content: space-between; padding: 0 15px; font-weight: bold; font-size: 15px;">
+            <span>حساب الحسبة التقريبي:</span>
+            <span style="color: #1e3a8a;">حسب المواد المختارة</span>
+        </div>
+        <button class="btn-checkout" onclick="sendToWhatsapp('طلب بضاعة منوعة جملة')">
+            📱 إرسال الطلبية دغري على الواتساب
+        </button>
+    </div>
+
+    <script>
+        function sendToWhatsapp(productName) {
+            var phoneNumber = "962788270005"; // الرقم الدولي لمؤسسة الزيق
+            var message = "مرحبا مؤسسة الزيق، يعطيكو العافية.. حابب أطلب جملة: " + productName;
+            var url = "https://wa.me/" + phoneNumber + "?text=" + encodeURIComponent(message);
+            window.open(url, '_blank');
+        }
+    </script>
+
+</body>
+</html>
